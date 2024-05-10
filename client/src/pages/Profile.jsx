@@ -56,12 +56,12 @@ export default function Profile() {
         allow write: if 
         request.resource.size <2 * 1024 *1024 &&
         request.resource.contentType.matches('image/.*') */}
-        <img 
-          src={currentUser.profilePicture}
-          className="h-24 w-24 rounded-full self-center 
-          cursor-pointer object-cover mt-2"
-          alt="profile"
-          onClick={() => fileRef.current.click()} />
+        <img
+          src={formData.profilePicture || currentUser.profilePicture}
+          alt='profile'
+          className='h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2'
+          onClick={() => fileRef.current.click()}
+        />
         <p className='text-sm self-center'>
           {imageError ? (
             <span className='text-red-700'>
